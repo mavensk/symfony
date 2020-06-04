@@ -1,0 +1,17 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: symfony
+  image: composer
+  commands: 
+  - composer install
+
+- name: ubuntu
+  image: ubuntu
+  commands:
+  - apt update && apt install zip
+  - zip -r symfony.zip .
+  - ls -al
