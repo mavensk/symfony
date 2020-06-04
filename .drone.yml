@@ -12,6 +12,6 @@ steps:
 - name: ubuntu
   image: ubuntu
   commands:
-  - apt update && apt install zip
+  - apt update && apt install -y zip
   - zip -r symfony.zip .
   - ls -al
