@@ -10,14 +10,13 @@ steps:
 #  - composer install
 #  - ping6 -c 1 ipv6.google.com
   - ping -c 1 google.com
-
 - name: send telegram notification
   image: appleboy/drone-telegram
-    settings:
+  settings:
       token: 
-	from_secret: tocken
+        from_secret: tocken
       to:
-	from_secret: chatid
+        from_secret: chatid
       message: >
         {{#success build.status}} 
          build {{build.number}} succeeded. Good job.
